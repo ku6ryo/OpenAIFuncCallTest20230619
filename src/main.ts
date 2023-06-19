@@ -18,6 +18,7 @@ enum Assinee {
   let functionCall: any = null
   let messages = [] as GptMessage[]
   while (true) {
+    console.log("Assignee:", assignee)
     if (assignee === Assinee.User) {
       const text = await new Promise<string>((resolve) => {
         rl.question("Your input: ", function(input) {
@@ -53,6 +54,6 @@ enum Assinee {
     } else {
       throw new Error("invalid assignee")
     }
-    console.log(messages[messages.length - 1])
+    console.log(messages[messages.length - 1].content)
   }
 })()
