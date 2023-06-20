@@ -9,7 +9,7 @@ export type GptMessage = {
 export async function callGpt(messages: GptMessage[], functions: ChatCompletionFunctions[]) {
   const openai = new OpenAIApi(new Configuration({ apiKey: process.env.OPENAI_API_KEY }))
   const result = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo-0613",
+    model: "gpt-3.5-turbo-16k-0613",
     messages,
     functions,
   })
